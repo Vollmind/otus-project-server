@@ -1,0 +1,11 @@
+{% extends "server_app/main.html" %}
+
+{% block title %} Now online in Tag-o-mancer {% endblock %}
+
+{% block content %}
+    {% for address in object_list %}
+        <div style="background: {% if address.is_online %} green {% else %} red {% endif %}">
+            <p>{{ address.user.username }} ({{ address.ip }})</p>
+        </div>
+    {% endfor %}
+{% endblock %}

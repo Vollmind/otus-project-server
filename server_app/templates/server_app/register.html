@@ -1,0 +1,18 @@
+{% extends "server_app/main.html" %}
+
+{% block title %} Register in Tag-o-mancer! {% endblock %}
+
+{% block content %}
+    <form action="{% url 'register' %}" method="post">
+        {% csrf_token %}
+        <table width="100%">
+            {{ form }}
+            <tr>
+                <td></td>
+                <td>
+                    <button type="submit" style="margin: 10px 0; float: top">Register</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+{% endblock %}
